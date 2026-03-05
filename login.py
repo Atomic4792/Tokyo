@@ -4,12 +4,13 @@ import requests
 
 load_dotenv()  # loads .env into environment variables
 
-url = os.getenv("ENDPOINT_URL")
-token = os.getenv("JSON_API_TOKEN")
-print(token)
+def get_random_api_data(): #missing return type indicator
+    url = os.getenv("ENDPOINT_URL")
+    token = os.getenv("JSON_API_TOKEN")
+    print(token)
 
-headers = {"Authorization": f"Bearer {token}"}
+    headers = {"Authorization": f"Bearer {token}"}
 
-r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers)
 
-get_data = r.json()
+    return  r.json()
