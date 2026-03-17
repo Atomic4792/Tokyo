@@ -2,7 +2,7 @@ def valid_credentials(user_email, condition) -> bool:
   #validation logic here
   return user_email in condition
   
-def end_login() -> bool:
+def continue_login() -> bool:
   answer = ""
   while not answer:
     choice = input("invalid email or password, would you like to try again? (y/n)").lower()
@@ -10,6 +10,6 @@ def end_login() -> bool:
       print("Please enter a valid choice")
       continue
     answer = choice
-  if answer in ("n", "no"):
+  if answer in ("y", "yes"):
     return True
   return False
