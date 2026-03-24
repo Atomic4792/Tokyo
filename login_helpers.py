@@ -1,6 +1,6 @@
-def valid_credentials(user_email, condition) -> bool:
+def valid_credentials(field, condition) -> bool:
   #validation logic here
-  return user_email in condition
+  return field == condition
   
 def continue_login() -> bool:
   answer = ""
