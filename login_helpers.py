@@ -1,15 +1,11 @@
-def valid_credentials(field, condition) -> bool:
-  #validation logic here
-  return field == condition
-  
-def continue_login() -> bool:
-  answer = ""
-  while not answer:
-    choice = input("invalid email or password, would you like to try again? (y/n)").lower()
-    if choice not in ("yes", "y", "no", "n"):
-      print("Please enter a valid choice")
-      continue
-    answer = choice
-  if answer in ("y", "yes"):
-    return True
-  return False
+def valid_credentials(field: str, condition: str) -> bool:
+    return field == condition
+
+def prompt_continue(message: str = "Would you like to try again? (y/n) ") -> bool:
+    while True:
+        choice = input(message).strip().lower()
+        if choice in ("y", "yes"):
+            return True
+        if choice in ("n", "no"):
+            return False
+        print("Please enter 'y' or 'n'.")
